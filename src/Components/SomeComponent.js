@@ -1,5 +1,6 @@
+import {Button} from 'mdc'
 import React from 'react'
 
 export default function SomeComponent(props) {
-  return <div>I am SomeComponent</div>
+  return <Button>I am SomeComponent 35</Button>
 }
