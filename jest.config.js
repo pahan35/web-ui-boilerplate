@@ -6,6 +6,10 @@ module.exports = {
   testEnvironment: 'jest-environment-jsdom',
   testMatch: ['**/*.test.js'],
   transform: {'^.+\\.js$': '<rootDir>/testing/babelizer.js'},
-  transformIgnorePatterns: ['.*/signal-exit/.*', '.*/is-typedarray/.*'],
+  transformIgnorePatterns: [
+    '.*/signal-exit/.*',
+    '.*/is-typedarray/.*' ,
+    '.*/safe-buffer/.*',
+  ],
   verbose: true,
 }
