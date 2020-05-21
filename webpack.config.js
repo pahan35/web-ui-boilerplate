@@ -7,11 +7,13 @@ const postcssSVG = require('postcss-svg')
 const postcssInlineSVG = require('postcss-inline-svg')
 const postcssFlexbugsFixes = require('postcss-flexbugs-fixes')
 
+const LiveReloadPlugin = require('webpack-livereload-plugin')
+
 const {shouldBabelize} = require('./testing/babelizer')
 
 const DEV = !hasFlag('mode=production')
 
-const plugins = [new MiniCssExtractPlugin()]
+const plugins = [new MiniCssExtractPlugin(), new LiveReloadPlugin()]
 
 module.exports = {
   devtool: DEV ? false : 'nosources-source-map',
