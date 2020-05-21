@@ -1,7 +1,8 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 const hasFlag = require('has-flag')
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const postcssPresetEnv = require('postcss-preset-env')
 const postcssSVG = require('postcss-svg')
 const postcssInlineSVG = require('postcss-inline-svg')
