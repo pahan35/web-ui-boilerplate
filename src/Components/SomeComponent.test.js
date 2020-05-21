@@ -4,6 +4,6 @@ import React from 'react'
 
 test('SomeComponent SSR', () => {
   const {getByText} = render(<SomeComponent />)
-  expect(getByText('I am SomeComponent')).toBeInTheDocument()
+  expect(getByText('I am SomeComponent 35')).toBeInTheDocument()
   expect(false).toBeFalsy() // change actual to false here
 })
