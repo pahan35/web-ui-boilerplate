@@ -1,0 +1,147 @@
+{
+  "extends": [
+    "plugin:jest/recommended",
+    "plugin:jest-formatting/recommended",
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "google",
+    "airbnb",
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "plugin:promise/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true,
+    }
+  },
+  "plugins": [
+    "babel",
+    "jsx-a11y",
+    "import",
+    "react-hooks",
+    "prettier",
+    "simple-import-sort",
+    "sort-keys-fix",
+    "sort-destructure-keys"
+  ],
+  "env": {
+      "browser": true,
+      "es6": true,
+    },
+  "settings": {
+    "import/resolver": {
+      // workaround for nodejs imports
+      // https://github.com/benmosher/eslint-plugin-import/issues/1396
+      "node": {
+        "paths": ["src"]
+      },
+      "alias": {
+        "extensions": [
+          "js"
+        ],
+        "map": [
+          ["App", "./src/App.js"],
+          ["Components", "./src/Components"]
+        ]
+      },
+    },
+    "react": {"version": "detect"}
+  },
+  "reportUnusedDisableDirectives": true,
+  "rules": {
+    "simple-import-sort/sort": "error",
+    "prettier/prettier": "warn",
+    "no-console": 0,
+    "max-len": [2, {
+      "code": 160,
+      "tabWidth": 2,
+      "ignoreUrls": true,
+      "ignoreComments": false,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+    }],
+    "require-jsdoc": [2, {
+      "require": {
+        "FunctionDeclaration": false,
+        "MethodDefinition": false,
+        "ClassDeclaration": false,
+      },
+    }],
+    "jest/prefer-todo": 2,
+    // TODO: enable this
+    "react/prop-types": 0,
+    "react/no-danger": 0,
+    "react/jsx-no-useless-fragment": 2,
+    "react/destructuring-assignment": [2, "always", {"ignoreClassFields": true}],
+    "react/default-props-match-prop-types": 2,
+    "react/require-default-props": 0,
+    "react/state-in-constructor": [2, "never"],
+    "react/static-property-placement": [2, "static public field"],
+    "react/jsx-fragments": [1, "syntax"],
+    "react/jsx-key": 2,
+    "react/jsx-sort-props": [2, {
+      "callbacksLast":  true,
+      "reservedFirst":  true,
+      "shorthandFirst": true,
+    }],
+    "import/no-cycle": 2,
+    "sort-keys-fix/sort-keys-fix": "error",
+    "sort-destructure-keys/sort-destructure-keys": [2, {"caseSensitive": true}],
+    // region TODO: Enable this after refactoring
+    "max-classes-per-file": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-props-no-spreading": 0,
+    // endregion
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/label-has-for": [2, {
+      "components": ["Label"],
+      "required": {"every": ["id"]},
+      "allowChildren": false
+    }],
+    "jsx-a11y/label-has-associated-control": 1,
+    "arrow-body-style": ["error", "as-needed"],
+    "no-return-assign": [2, "except-parens"],
+    "no-underscore-dangle": [2, {"allowAfterThis": true}],
+    "no-alert": 0,
+    "no-restricted-syntax": 0,
+    "no-continue": 0,
+    "dot-notation": [2, {"allowKeywords": true, "allowPattern": "^_[a-z]+$|^[a-z]+(_[a-z]+)+$"}],
+    "no-restricted-imports": [2, {"patterns": ["./*", "."]}],
+    "new-cap": 0,
+    "camelcase": 0,
+    "no-invalid-this": 0,
+    "object-curly-spacing": 0,
+    "quotes": 0,
+    "semi": 0,
+    "no-unused-expressions": 0,
+    "valid-typeof": 0,
+    "import/no-unassigned-import": 2,
+    "import/no-unused-modules": [1, {
+      "missingExports": true,
+      "unusedExports": true,
+      "ignoreExports": [
+        "src/**/*.test.js*",
+        "*.config.js",
+      ]
+    }],
+    "babel/new-cap": ["warn"],
+    "babel/camelcase": ["warn", {"properties": "never"}],
+    "babel/no-invalid-this": 2,
+    "babel/no-unused-expressions": 2,
+    "babel/valid-typeof": 1,
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": ["**/*.test.js", "**/*.test.jsx", "js/testing/**", "*.config.js"]
+    }],
+    "promise/prefer-await-to-then": 2,
+    "promise/prefer-await-to-callbacks": 0
+  }
+}
