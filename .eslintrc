@@ -39,6 +39,7 @@
       // workaround for nodejs imports
       // https://github.com/benmosher/eslint-plugin-import/issues/1396
       "node": {
+        "moduleDirecories": ["node_modules", "src"],
         "paths": ["src"]
       },
       "alias": {
