@@ -8,7 +8,7 @@ module.exports = {
   transform: {'^.+\\.js$': '<rootDir>/testing/babelizer.js'},
   transformIgnorePatterns: [
     '.*/signal-exit/.*',
-    '.*/is-typedarray/.*' ,
+    '.*/is-typedarray/.*',
     '.*/safe-buffer/.*',
   ],
   verbose: true,
