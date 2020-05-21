@@ -130,6 +130,7 @@
       "unusedExports": true,
       "ignoreExports": [
         "src/**/*.test.js*",
+        "**/mdc/index.js",
         "*.config.js",
       ]
     }],
