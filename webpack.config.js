@@ -26,7 +26,7 @@ module.exports = {
     rules: [
       {
         include: shouldBabelize,
-        test: /\.jsx?$/,
+        test: /\.js$/,
         use: {
           loader: 'babel-loader',
         },
