@@ -6,6 +6,7 @@ export {
   CardActions,
 } from '@rmwc/card'
 export {
+  Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
