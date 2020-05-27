@@ -23,7 +23,6 @@
   "plugins": [
     "babel",
     "jsx-a11y",
-    "import",
     "react-hooks",
     "prettier",
     "simple-import-sort",
@@ -38,19 +37,8 @@
     "import/resolver": {
       // workaround for nodejs imports
       // https://github.com/benmosher/eslint-plugin-import/issues/1396
-      "node": {
-        "moduleDirecories": ["node_modules", "src"],
-        "paths": ["src"]
-      },
-      "alias": {
-        "extensions": [
-          "js"
-        ],
-        "map": [
-          ["App", "./src/App.js"],
-          ["Components", "./src/Components"]
-        ]
-      },
+      "node": {},
+      "webpack": {},
     },
     "react": {"version": "detect"}
   },
@@ -92,7 +80,6 @@
       "reservedFirst":  true,
       "shorthandFirst": true,
     }],
-    "import/no-cycle": 2,
     "sort-keys-fix/sort-keys-fix": "error",
     "sort-destructure-keys/sort-destructure-keys": [2, {"caseSensitive": true}],
     // region TODO: Enable this after refactoring
@@ -125,24 +112,12 @@
     "semi": 0,
     "no-unused-expressions": 0,
     "valid-typeof": 0,
-    "import/no-unassigned-import": 2,
-    "import/no-unused-modules": [1, {
-      "missingExports": true,
-      "unusedExports": true,
-      "ignoreExports": [
-        "src/**/*.test.js*",
-        "**/mdc/index.js",
-        "*.config.js",
-      ]
-    }],
     "babel/new-cap": ["warn"],
     "babel/camelcase": ["warn", {"properties": "never"}],
     "babel/no-invalid-this": 2,
     "babel/no-unused-expressions": 2,
     "babel/valid-typeof": 1,
-    "import/no-extraneous-dependencies": ["error", {
-      "devDependencies": ["**/*.test.js", "**/*.test.jsx", "js/testing/**", "*.config.js"]
-    }],
+    "import/extensions": 0,
     "promise/prefer-await-to-then": 2,
     "promise/prefer-await-to-callbacks": 0
   }
