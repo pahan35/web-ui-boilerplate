@@ -4,6 +4,8 @@ const babelJestTransformer = require('babel-jest')
 
 const MODULE_DIR = /(.*([/\\]node_modules|\.\.)[/\\](@[^/\\]+[/\\])?[^/\\]+)([/\\].*)?$/g
 
+const BABEL_EXCLUDE_MODULES = ['@material/dom']
+
 function shouldBabelize(filepath) {
   // process es6 modules with babel; ignore everything else
   if (filepath.split(/[/\\]/).indexOf('node_modules') === -1) {
@@ -14,6 +16,9 @@ function shouldBabelize(filepath) {
     'package.json',
   )
   const pkg = JSON.parse(fs.readFileSync(manifest))
+  if (BABEL_EXCLUDE_MODULES.includes(pkg.name)) {
+    return false
+  }
   return !!(pkg.module || pkg['jsnext:main'])
 }
 
