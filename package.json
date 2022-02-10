@@ -73,7 +73,7 @@
     "jest-environment-jsdom": "^26.3.0",
     "jest-environment-puppeteer": "^4.4.0",
     "mini-css-extract-plugin": "^0.11.2",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-inline-svg": "^4.1.0",
     "postcss-loader": "^3.0.0",
